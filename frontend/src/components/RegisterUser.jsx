@@ -10,6 +10,7 @@ const RegisterUser = () => {
         e.preventDefault();
         const user = { name, age, email };
 
+        //conexión con la Api del backend
         try {
             const response = await fetch('http://localhost:3000/api/users', {
                 method: 'POST',
@@ -35,31 +36,31 @@ const RegisterUser = () => {
         <div className="container mt-5">
             <h2>Registrar Usuario</h2>
             <form onSubmit={handleSubmit}>
-                <div className="mb-3">
+                <div className="mb-3"> 
                     <label className="form-label">Nombre</label>
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        value={name} 
-                        onChange={(e) => setName(e.target.value)} 
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         required />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Edad</label>
-                    <input 
-                        type="number" 
-                        className="form-control" 
-                        value={age} 
-                        onChange={(e) => setAge(e.target.value)} 
+                    <input
+                        type="number"
+                        className="form-control"
+                        value={age}
+                        onChange={(e) => setAge(e.target.value)}
                         required />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Correo Electrónico</label>
-                    <input 
-                        type="email" 
-                        className="form-control" 
-                        value={email} 
-                        onChange={(e) => setEmail(e.target.value)} 
+                    <input
+                        type="email"
+                        className="form-control"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required />
                 </div>
                 <button type="submit" className="btn btn-primary">Registrar</button>
